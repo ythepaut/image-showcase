@@ -18,7 +18,7 @@ export const getStaticProps: GetStaticProps<Props> = async (context) => {
 
 export default function HomePage(props: Readonly<Props>) {
   return (
-    <section className="m-8">
+    <section className="m-8" aria-label="Gallery Section">
       <Gallery images={props.images} />
     </section>
   );

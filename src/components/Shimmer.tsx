@@ -13,6 +13,8 @@ export default function Shimmer({ width, height }: Readonly<Props>) {
       height={height}
       xmlns="http://www.w3.org/2000/svg"
       xmlnsXlink="http://www.w3.org/1999/xlink"
+      role="img"
+      aria-label="Loading image"
     >
       <defs>
         <linearGradient id="g">
