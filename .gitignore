@@ -109,3 +109,4 @@ cypress/videos/
 
 .swc/
 
+ignore/

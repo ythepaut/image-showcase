@@ -1,15 +1,25 @@
-import {useTranslations} from "next-intl";
 import { GetStaticProps } from "next";
+import Gallery from "../components/gallery/Gallery";
+import { Image } from "../model/image";
 
-export default function HomePage() {
-  const t = useTranslations("home");
-  return <h1 className="text-red-600">{t("hello")}</h1>;
+interface Props {
+  messages: any;
+  images: Image[];
 }
 
-export const getStaticProps: GetStaticProps = async ({ locale }) => {
+export const getStaticProps: GetStaticProps<Props> = async (context) => {
   return {
     props: {
-      messages: require(`../../public/lang/${locale}.json`),
-    },
+      messages: require(`../../public/lang/${context.locale}.json`),
+      images: require("../../public/assets/images.json")
+    }
   };
 };
+
+export default function HomePage(props: Readonly<Props>) {
+  return (
+    <section className="m-8" aria-label="Gallery Section">
+      <Gallery images={props.images} />
+    </section>
+  );
+}
