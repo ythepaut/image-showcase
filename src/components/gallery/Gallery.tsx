@@ -36,7 +36,9 @@ export default function Gallery({ images }: Readonly<Props>) {
 
   return (
     <div
-      className={`${columns === 1 ? "columns-1" : columns === 2 ? "columns-2" : "columns-3"} gap-0`}
+      className={`gap-0 ${
+        columns === 1 ? "columns-1" : columns === 2 ? "columns-2" : "columns-3"
+      }`}
     >
       {columnWrappers.flat().map((image: Image) => (
         <ImageTile image={image} key={image.src} />

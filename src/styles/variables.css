@@ -1,0 +1,48 @@
+:root {
+  --colour-blue: #4c6fff;
+  --colour-blue-dark: #3754db;
+  --colour-blue-light: #7895ff;
+  --colour-blue-soft: #e1e8ff;
+
+  --colour-green: #66cb9f;
+  --colour-green-dark: #4aae8c;
+  --colour-green-light: #8cdfb3;
+  --colour-green-soft: #deffee;
+
+  --colour-orange: #f7936f;
+  --colour-orange-dark: #d46a51;
+  --colour-orange-light: #fab592;
+  --colour-orange-soft: #ffede3;
+
+  --colour-red: #f16063;
+  --colour-red-dark: #cf4655;
+  --colour-red-light: #f68e87;
+  --colour-red-soft: #ffe6e4;
+
+  --colour-cyan: #68dbf2;
+  --colour-cyan-dark: #4cafd0;
+  --colour-cyan-light: #8dedf7;
+  --colour-cyan-soft: #e5fdff;
+
+  --colour-surface-light: #ffffff;
+  --colour-surface-light-secondary: #ebf2fa;
+
+  --colour-surface-dark: #101225;
+  --colour-surface-dark-secondary: #16192c;
+
+  --colour-text: #101225;
+  --colour-text-muted: #505780;
+  --colour-text-white: #fafafa;
+}
+
+.dark {
+  --colour-surface-light: #101225;
+  --colour-surface-light-secondary: #16192c;
+
+  --colour-surface-dark: #ffffff;
+  --colour-surface-dark-secondary: #16192c;
+
+  --colour-text: #fafafa;
+  --colour-text-muted: #505780;
+  --colour-text-white: #101225;
+}

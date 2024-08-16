@@ -9,14 +9,18 @@ interface Props {
 
 export default function ImageTile({ image }: Readonly<Props>) {
   return (
-    <div className="p-1">
+    <div className="p-50">
       <NextImage
-        className="w-full"
+        className="w-full rounded-50"
         src={image.src}
         alt={image.alt}
         width={image.width}
         height={image.height}
-        placeholder={`data:image/svg+xml,${encodeURIComponent(ReactDOMServer.renderToString(<Shimmer width={image.width} height={image.height} />))}`}
+        placeholder={`data:image/svg+xml,${encodeURIComponent(
+          ReactDOMServer.renderToString(
+            <Shimmer width={image.width} height={image.height} />
+          )
+        )}`}
       />
     </div>
   );
