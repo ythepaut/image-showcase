@@ -1,80 +1,92 @@
 [
   {
-    "src": "https://cdn.pixabay.com/photo/2024/08/05/21/19/lion-8947711_960_720.jpg",
-    "width": 750,
-    "height": 720,
-    "alt": "1"
+    "src": "https://server.ythepaut.com/share/showcase/test/lion-8947711.jpg",
+    "width": 3798,
+    "height": 3646,
+    "alt": "Lion"
   },
   {
-    "src": "https://cdn.pixabay.com/photo/2023/11/26/23/43/horse-8414411_960_720.jpg",
-    "width": 480,
-    "height": 720,
-    "alt": "2"
+    "src": "https://server.ythepaut.com/share/showcase/test/horse-8414411.jpg",
+    "width": 4000,
+    "height": 6000,
+    "alt": "Horse"
   },
   {
-    "src": "https://cdn.pixabay.com/photo/2018/03/04/17/23/tiger-3198598_960_720.jpg",
-    "width": 576,
-    "height": 720,
-    "alt": "3"
+    "src": "https://server.ythepaut.com/share/showcase/test/tiger-3198598.jpg",
+    "width": 2160,
+    "height": 2702,
+    "alt": "Tiger"
   },
   {
-    "src": "https://cdn.pixabay.com/photo/2023/11/01/11/15/cable-car-8357178_960_720.jpg",
-    "width": 960,
-    "height": 640,
-    "alt": "4"
+    "src": "https://server.ythepaut.com/share/showcase/test/cable-car-8357178.jpg",
+    "width": 7000,
+    "height": 4667,
+    "alt": "Cable car"
   },
   {
-    "src": "https://cdn.pixabay.com/photo/2024/02/21/15/09/plant-8587893_960_720.jpg",
-    "width": 960,
-    "height": 638,
-    "alt": "5"
+    "src": "https://server.ythepaut.com/share/showcase/test/plant-8587893.jpg",
+    "width": 4288,
+    "height": 2848,
+    "alt": "Plant"
   },
   {
-    "src": "https://cdn.pixabay.com/photo/2016/05/22/19/48/sunrise-1409090_960_720.jpg",
-    "width": 960,
-    "height": 540,
-    "alt": "6"
+    "src": "https://server.ythepaut.com/share/showcase/test/sunrise-1409090.jpg",
+    "width": 3266,
+    "height": 1837,
+    "alt": "Tree sunrise"
   },
   {
-    "src": "https://cdn.pixabay.com/photo/2023/12/15/03/11/basket-to-the-sea-8449952_960_720.jpg",
-    "width": 518,
-    "height": 720,
-    "alt": "7"
+    "src": "https://server.ythepaut.com/share/showcase/test/basket-to-the-sea-8449952.jpg",
+    "width": 3400,
+    "height": 4724,
+    "alt": "Baskets"
   },
   {
-    "src": "https://cdn.pixabay.com/photo/2024/07/19/12/23/woman-8906207_960_720.jpg",
-    "width": 720,
-    "height": 720,
-    "alt": "8"
+    "src": "https://server.ythepaut.com/share/showcase/test/woman-8906207.jpg",
+    "width": 5000,
+    "height": 5000,
+    "alt": "Woman"
   },
   {
-    "src": "https://cdn.pixabay.com/photo/2024/08/05/13/17/dog-8946829_960_720.jpg",
-    "width": 960,
-    "height": 640,
-    "alt": "9"
+    "src": "https://server.ythepaut.com/share/showcase/test/dog-8946829.jpg",
+    "width": 4283,
+    "height": 2855,
+    "alt": "Dog"
   },
   {
-    "src": "https://cdn.pixabay.com/photo/2024/05/24/19/06/bird-8785666_960_720.jpg",
-    "width": 540,
-    "height": 720,
-    "alt": "10"
+    "src": "https://server.ythepaut.com/share/showcase/test/bird-8519547.jpg",
+    "width": 6000,
+    "height": 4000,
+    "alt": "Bird"
   },
   {
-    "src": "https://cdn.pixabay.com/photo/2024/07/05/22/30/penguin-8875750_960_720.jpg",
-    "width": 960,
-    "height": 640,
-    "alt": "11"
+    "src": "https://server.ythepaut.com/share/showcase/test/penguin-8875750.jpg",
+    "width": 4238,
+    "height": 2824,
+    "alt": "Penguin"
   },
   {
-    "src": "https://cdn.pixabay.com/photo/2024/01/02/10/33/stream-8482939_960_720.jpg",
-    "width": 480,
-    "height": 720,
-    "alt": "12"
+    "src": "https://server.ythepaut.com/share/showcase/test/bird-8785666.jpg",
+    "width": 3456,
+    "height": 4608,
+    "alt": "Sparrow"
   },
   {
-    "src": "https://cdn.pixabay.com/photo/2024/07/15/16/09/bird-8897237_960_720.jpg",
-    "width": 960,
-    "height": 640,
-    "alt": "13"
+    "src": "https://server.ythepaut.com/share/showcase/test/hot-air-balloon-8708066.jpg",
+    "width": 4649,
+    "height": 5530,
+    "alt": "Balloon"
+  },
+  {
+    "src": "https://server.ythepaut.com/share/showcase/test/mountain-864215.jpg",
+    "width": 1669,
+    "height": 2500,
+    "alt": "Mountain"
+  },
+  {
+    "src": "https://server.ythepaut.com/share/showcase/test/dog-15601354.jpg",
+      "width": 933,
+    "height": 583,
+    "alt": "Dog"
   }
 ]

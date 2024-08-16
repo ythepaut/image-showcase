@@ -2,6 +2,10 @@ import HomePage, { getStaticProps } from "../../src/pages";
 import { expect } from "@jest/globals";
 import { render, screen } from "@testing-library/react";
 
+jest.mock("../../src/components/gallery/Gallery", () => () => (
+  <div />
+));
+
 describe("Home Page", () => {
   it("should render", () => {
     // When

@@ -5,17 +5,23 @@ import Shimmer from "../Shimmer";
 
 interface Props {
   image: Image;
+  onClick: () => void;
 }
 
-export default function ImageTile({ image }: Readonly<Props>) {
+export default function ImageTile({ image, onClick }: Readonly<Props>) {
   return (
     <div className="p-50">
       <NextImage
-        className="w-full rounded-50"
+        data-pswp-width={image.width}
+        data-pswp-height={image.height}
+        className="w-full rounded-50 cursor-pointer"
+        onClick={() => onClick()}
         src={image.src}
         alt={image.alt}
         width={image.width}
         height={image.height}
+        quality={1}
+        unoptimized={false}
         placeholder={`data:image/svg+xml,${encodeURIComponent(
           ReactDOMServer.renderToString(
             <Shimmer width={image.width} height={image.height} />
