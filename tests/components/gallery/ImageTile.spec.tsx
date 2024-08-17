@@ -8,10 +8,9 @@ describe("ImageTile", () => {
     // Given
     const image: Image = {
       src: "/test.png",
-      alt: "alt",
+      title: "alt",
       width: 100,
-      height: 100,
-      id: "1"
+      height: 100
     };
 
     // When
@@ -20,6 +19,6 @@ describe("ImageTile", () => {
     // Then
     const imageElement = screen.getByRole("img");
     expect(imageElement).toBeInTheDocument();
-    expect(imageElement).toHaveAttribute("alt", image.alt);
+    expect(imageElement).toHaveAttribute("alt", image.title);
   });
 });

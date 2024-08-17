@@ -15,9 +15,9 @@ export default function ImageTile({ image, onClick }: Readonly<Props>) {
         data-pswp-width={image.width}
         data-pswp-height={image.height}
         className="w-full rounded-50 cursor-pointer"
-        onClick={() => onClick()}
+        onClick={onClick}
         src={image.src}
-        alt={image.alt}
+        alt={image.title}
         width={image.width}
         height={image.height}
         quality={1}

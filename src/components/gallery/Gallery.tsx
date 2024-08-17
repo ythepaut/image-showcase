@@ -1,7 +1,7 @@
 import { Image } from "../../model/image";
 import ImageTile from "./ImageTile";
 import { useEffect, useState } from "react";
-import ImageDetailModal from "../ImageDetailModal";
+import ImageDetailPopover from "../ImageDetailPopover";
 
 
 const SCREEN_WIDTH_XL = 1280;
@@ -52,7 +52,7 @@ export default function Gallery({ images }: Readonly<Props>) {
       </div>
 
       {selectedImage && (
-        <ImageDetailModal image={selectedImage} onClose={() => setSelectedImage(null)} />
+        <ImageDetailPopover image={selectedImage} onClose={() => setSelectedImage(null)} />
       )}
     </div>
   );

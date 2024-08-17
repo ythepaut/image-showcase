@@ -24,6 +24,22 @@
   --colour-cyan-light: #8dedf7;
   --colour-cyan-soft: #e5fdff;
 
+  --colour-silver: #E4ECF7;
+  --colour-silver-dark: #A6B7D4;
+  --colour-silver-light: #EBF2FA;
+
+  --colour-grey-75: #FAFAFA;
+  --colour-grey-100: #F7FAFC;
+  --colour-grey-200: #EDF2F7;
+  --colour-grey-300: #E2E8F0;
+  --colour-grey-400: #CBD5E0;
+  --colour-grey-500: #A0AEC0;
+  --colour-grey-600: #718096;
+  --colour-grey-700: #4A5568;
+  --colour-grey-800: #2D3748;
+  --colour-grey-900: #1A202C;
+
+
   --colour-surface-light: #ffffff;
   --colour-surface-light-secondary: #ebf2fa;
 

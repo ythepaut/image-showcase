@@ -35,6 +35,23 @@ module.exports = {
         light: "var(--colour-cyan-light)",
         soft: "var(--colour-cyan-soft)"
       },
+      silver: {
+        DEFAULT: "var(--colour-silver)",
+        dark: "var(--colour-silver-dark)",
+        light: "var(--colour-silver-light)"
+      },
+      grey: {
+        "75": "var(--colour-grey-75)",
+        "100": "var(--colour-grey-100)",
+        "200": "var(--colour-grey-200)",
+        "300": "var(--colour-grey-300)",
+        "400": "var(--colour-grey-400)",
+        "500": "var(--colour-grey-500)",
+        "600": "var(--colour-grey-600)",
+        "700": "var(--colour-grey-700)",
+        "800": "var(--colour-grey-800)",
+        "900": "var(--colour-grey-900)"
+      },
       txt: {
         DEFAULT: "var(--colour-text)",
         muted: "var(--colour-text-muted)",
@@ -77,18 +94,20 @@ module.exports = {
       400: "32px",
       full: "999px"
     },
-    spacing: {
-      0: "0px",
-      25: "2px",
-      50: "4px",
-      100: "8px",
-      200: "16px",
-      300: "24px",
-      400: "32px",
-      500: "40px",
-      800: "64px"
-    },
     extend: {
+      spacing: {
+        0: "0px",
+        25: "2px",
+        50: "4px",
+        75: "6px",
+        100: "8px",
+        150: "12px",
+        200: "16px",
+        300: "24px",
+        400: "32px",
+        500: "40px",
+        800: "64px"
+      },
       maxHeight: {
         "10vh": "10vh",
         "20vh": "20vh",

@@ -1,92 +1,80 @@
 [
   {
-    "src": "https://server.ythepaut.com/share/showcase/test/lion-8947711.jpg",
-    "width": 3798,
-    "height": 3646,
-    "alt": "Lion"
+    "src": "https://server.ythepaut.com/share/showcase/test/agios-nikolaos-lake-flowers.jpg",
+    "width": 4024,
+    "height": 6048,
+    "title": "Lake of Agios Nikolaos"
   },
   {
-    "src": "https://server.ythepaut.com/share/showcase/test/horse-8414411.jpg",
-    "width": 4000,
-    "height": 6000,
-    "alt": "Horse"
+    "src": "https://server.ythepaut.com/share/showcase/test/agios-nikolaos-lake.jpg",
+    "width": 5814,
+    "height": 3868,
+    "title": "Lake of Agios Nikolaos"
   },
   {
-    "src": "https://server.ythepaut.com/share/showcase/test/tiger-3198598.jpg",
-    "width": 2160,
-    "height": 2702,
-    "alt": "Tiger"
+    "src": "https://server.ythepaut.com/share/showcase/test/rethymno-street.jpg",
+    "width": 3895,
+    "height": 5855,
+    "title": "Rethymno Street"
   },
   {
-    "src": "https://server.ythepaut.com/share/showcase/test/cable-car-8357178.jpg",
-    "width": 7000,
-    "height": 4667,
-    "alt": "Cable car"
+    "src": "https://server.ythepaut.com/share/showcase/test/preveli-monastery.jpg",
+    "width": 4024,
+    "height": 6048,
+    "title": "Preveli Monastery"
   },
   {
-    "src": "https://server.ythepaut.com/share/showcase/test/plant-8587893.jpg",
-    "width": 4288,
-    "height": 2848,
-    "alt": "Plant"
+    "src": "https://server.ythepaut.com/share/showcase/test/spili-street.jpg",
+    "width": 4004,
+    "height": 6018,
+    "title": "Splili street"
   },
   {
-    "src": "https://server.ythepaut.com/share/showcase/test/sunrise-1409090.jpg",
-    "width": 3266,
-    "height": 1837,
-    "alt": "Tree sunrise"
+    "src": "https://server.ythepaut.com/share/showcase/test/hersonissos-sunrise.jpg",
+    "width": 6048,
+    "height": 4024,
+    "title": "Hersonissos Sunrise"
   },
   {
-    "src": "https://server.ythepaut.com/share/showcase/test/basket-to-the-sea-8449952.jpg",
-    "width": 3400,
-    "height": 4724,
-    "alt": "Baskets"
+    "src": "https://server.ythepaut.com/share/showcase/test/spinalonga.jpg",
+    "width": 4475,
+    "height": 3357,
+    "title": "Spinalonga"
   },
   {
-    "src": "https://server.ythepaut.com/share/showcase/test/woman-8906207.jpg",
-    "width": 5000,
-    "height": 5000,
-    "alt": "Woman"
+    "src": "https://server.ythepaut.com/share/showcase/test/oiseau.jpg",
+    "width": 3084,
+    "height": 3084,
+    "title": "Bird"
   },
   {
-    "src": "https://server.ythepaut.com/share/showcase/test/dog-8946829.jpg",
-    "width": 4283,
-    "height": 2855,
-    "alt": "Dog"
-  },
-  {
-    "src": "https://server.ythepaut.com/share/showcase/test/bird-8519547.jpg",
+    "src": "https://server.ythepaut.com/share/showcase/test/bretagne-plage.jpg",
     "width": 6000,
     "height": 4000,
-    "alt": "Bird"
+    "title": "Plage de Bretagne"
   },
   {
-    "src": "https://server.ythepaut.com/share/showcase/test/penguin-8875750.jpg",
-    "width": 4238,
-    "height": 2824,
-    "alt": "Penguin"
+    "src": "https://server.ythepaut.com/share/showcase/test/bretagne-maison.jpg",
+    "width": 4000,
+    "height": 6000,
+    "title": ""
   },
   {
-    "src": "https://server.ythepaut.com/share/showcase/test/bird-8785666.jpg",
-    "width": 3456,
-    "height": 4608,
-    "alt": "Sparrow"
+    "src": "https://server.ythepaut.com/share/showcase/test/le-four-a-pain.jpg",
+    "width": 6000,
+    "height": 4000,
+    "title": "Le Four à Pain"
   },
   {
-    "src": "https://server.ythepaut.com/share/showcase/test/hot-air-balloon-8708066.jpg",
-    "width": 4649,
-    "height": 5530,
-    "alt": "Balloon"
+    "src": "https://server.ythepaut.com/share/showcase/test/bretagne-maison-rocher.jpg",
+    "width": 6000,
+    "height": 4000,
+    "title": ""
   },
   {
-    "src": "https://server.ythepaut.com/share/showcase/test/mountain-864215.jpg",
-    "width": 1669,
-    "height": 2500,
-    "alt": "Mountain"
-  },
-  {
-    "src": "https://server.ythepaut.com/share/showcase/test/dog-15601354.jpg",
-      "width": 933,
-    "height": 583,
-    "alt": "Dog"
+    "src": "https://server.ythepaut.com/share/showcase/test/bretagne-bateau-brouillard.jpg",
+    "width": 6000,
+    "height": 4000,
+    "title": ""
   }
 ]

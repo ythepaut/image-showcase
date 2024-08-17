@@ -1,4 +1,12 @@
 {
-    "home": {
-    }
+  "common": {
+    "close": "Close"
+  },
+  "exif": {
+    "artist": "Artist",
+    "createDate": "Date",
+    "dimensions": "Dimensions"
+  },
+  "home": {
+  }
 }
