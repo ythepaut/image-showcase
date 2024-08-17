@@ -1,6 +1,6 @@
 import "../styles/global.css";
 import "../styles/variables.css";
-import "photoswipe/style.css";
+import "bigger-picture/css";
 import { NextIntlClientProvider } from "next-intl";
 import type { Metadata } from "next";
 import React from "react";
