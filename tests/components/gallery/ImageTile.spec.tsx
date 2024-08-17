@@ -10,11 +10,12 @@ describe("ImageTile", () => {
       src: "/test.png",
       alt: "alt",
       width: 100,
-      height: 100
+      height: 100,
+      id: "1"
     };
 
     // When
-    render(<ImageTile image={image} />);
+    render(<ImageTile image={image} onClick={() => {}} />);
 
     // Then
     const imageElement = screen.getByRole("img");
