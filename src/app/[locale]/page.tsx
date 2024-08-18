@@ -1,8 +1,11 @@
 import Gallery from "../../components/gallery/Gallery";
 import { Image } from "../../model/image";
+import getConfig from "next/config";
+
+const { publicRuntimeConfig } = getConfig();
 
 const fetchImages = async () => {
-  const response = await fetch("http://localhost:3000/assets/images.json");
+  const response = await fetch(`${publicRuntimeConfig.appUrl}/assets/images.json`);
   if (!response.ok) {
     throw new Error("Failed to fetch images");
   }

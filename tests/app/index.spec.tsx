@@ -12,6 +12,12 @@ global.fetch = jest.fn(() =>
   } as Response)
 );
 
+jest.mock("next/config", () => () => ({
+  publicRuntimeConfig: {
+    appUrl: "http://localhost:3000",
+  },
+}));
+
 describe("Home Page", () => {
   it("should render", async () => {
     // When
