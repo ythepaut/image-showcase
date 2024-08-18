@@ -1,10 +1,11 @@
 import "../styles/global.css";
+import "../styles/variables.css";
+import "bigger-picture/css";
 import { NextIntlClientProvider } from "next-intl";
 import type { Metadata } from "next";
 import React from "react";
 import { AppProps } from "next/app";
 import getConfig from "next/config";
-
 
 const { publicRuntimeConfig } = getConfig();
 
@@ -13,7 +14,9 @@ export const metadata: Metadata = {
   title: publicRuntimeConfig.appName,
   applicationName: publicRuntimeConfig.appName,
   description: publicRuntimeConfig.appDescription,
-  authors: [{ name: "Yohann THEPAUT (ythepaut)", url: "https://www.ythepaut.com" }],
+  authors: [
+    { name: "Yohann THEPAUT (ythepaut)", url: "https://www.ythepaut.com" }
+  ],
   creator: "Yohann THEPAUT (ythepaut)",
   keywords: publicRuntimeConfig.appKeywords,
   openGraph: {

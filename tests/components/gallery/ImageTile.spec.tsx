@@ -8,17 +8,17 @@ describe("ImageTile", () => {
     // Given
     const image: Image = {
       src: "/test.png",
-      alt: "alt",
+      title: "alt",
       width: 100,
       height: 100
     };
 
     // When
-    render(<ImageTile image={image} />);
+    render(<ImageTile image={image} onClick={() => {}} />);
 
     // Then
     const imageElement = screen.getByRole("img");
     expect(imageElement).toBeInTheDocument();
-    expect(imageElement).toHaveAttribute("alt", image.alt);
+    expect(imageElement).toHaveAttribute("alt", image.title);
   });
 });

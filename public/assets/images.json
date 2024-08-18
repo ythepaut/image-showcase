@@ -1,80 +1,80 @@
 [
   {
-    "src": "https://cdn.pixabay.com/photo/2024/08/05/21/19/lion-8947711_960_720.jpg",
-    "width": 750,
-    "height": 720,
-    "alt": "1"
+    "src": "https://server.ythepaut.com/share/showcase/test/agios-nikolaos-lake-flowers.jpg",
+    "width": 4024,
+    "height": 6048,
+    "title": "Lake of Agios Nikolaos"
   },
   {
-    "src": "https://cdn.pixabay.com/photo/2023/11/26/23/43/horse-8414411_960_720.jpg",
-    "width": 480,
-    "height": 720,
-    "alt": "2"
+    "src": "https://server.ythepaut.com/share/showcase/test/agios-nikolaos-lake.jpg",
+    "width": 5814,
+    "height": 3868,
+    "title": "Lake of Agios Nikolaos"
   },
   {
-    "src": "https://cdn.pixabay.com/photo/2018/03/04/17/23/tiger-3198598_960_720.jpg",
-    "width": 576,
-    "height": 720,
-    "alt": "3"
+    "src": "https://server.ythepaut.com/share/showcase/test/rethymno-street.jpg",
+    "width": 3895,
+    "height": 5855,
+    "title": "Rethymno Street"
   },
   {
-    "src": "https://cdn.pixabay.com/photo/2023/11/01/11/15/cable-car-8357178_960_720.jpg",
-    "width": 960,
-    "height": 640,
-    "alt": "4"
+    "src": "https://server.ythepaut.com/share/showcase/test/preveli-monastery.jpg",
+    "width": 4024,
+    "height": 6048,
+    "title": "Preveli Monastery"
   },
   {
-    "src": "https://cdn.pixabay.com/photo/2024/02/21/15/09/plant-8587893_960_720.jpg",
-    "width": 960,
-    "height": 638,
-    "alt": "5"
+    "src": "https://server.ythepaut.com/share/showcase/test/spili-street.jpg",
+    "width": 4004,
+    "height": 6018,
+    "title": "Splili street"
   },
   {
-    "src": "https://cdn.pixabay.com/photo/2016/05/22/19/48/sunrise-1409090_960_720.jpg",
-    "width": 960,
-    "height": 540,
-    "alt": "6"
+    "src": "https://server.ythepaut.com/share/showcase/test/hersonissos-sunrise.jpg",
+    "width": 6048,
+    "height": 4024,
+    "title": "Hersonissos Sunrise"
   },
   {
-    "src": "https://cdn.pixabay.com/photo/2023/12/15/03/11/basket-to-the-sea-8449952_960_720.jpg",
-    "width": 518,
-    "height": 720,
-    "alt": "7"
+    "src": "https://server.ythepaut.com/share/showcase/test/spinalonga.jpg",
+    "width": 4475,
+    "height": 3357,
+    "title": "Spinalonga"
   },
   {
-    "src": "https://cdn.pixabay.com/photo/2024/07/19/12/23/woman-8906207_960_720.jpg",
-    "width": 720,
-    "height": 720,
-    "alt": "8"
+    "src": "https://server.ythepaut.com/share/showcase/test/oiseau.jpg",
+    "width": 3084,
+    "height": 3084,
+    "title": "Bird"
   },
   {
-    "src": "https://cdn.pixabay.com/photo/2024/08/05/13/17/dog-8946829_960_720.jpg",
-    "width": 960,
-    "height": 640,
-    "alt": "9"
+    "src": "https://server.ythepaut.com/share/showcase/test/bretagne-plage.jpg",
+    "width": 6000,
+    "height": 4000,
+    "title": "Plage de Bretagne"
   },
   {
-    "src": "https://cdn.pixabay.com/photo/2024/05/24/19/06/bird-8785666_960_720.jpg",
-    "width": 540,
-    "height": 720,
-    "alt": "10"
+    "src": "https://server.ythepaut.com/share/showcase/test/bretagne-maison.jpg",
+    "width": 4000,
+    "height": 6000,
+    "title": ""
   },
   {
-    "src": "https://cdn.pixabay.com/photo/2024/07/05/22/30/penguin-8875750_960_720.jpg",
-    "width": 960,
-    "height": 640,
-    "alt": "11"
+    "src": "https://server.ythepaut.com/share/showcase/test/le-four-a-pain.jpg",
+    "width": 6000,
+    "height": 4000,
+    "title": "Le Four à Pain"
   },
   {
-    "src": "https://cdn.pixabay.com/photo/2024/01/02/10/33/stream-8482939_960_720.jpg",
-    "width": 480,
-    "height": 720,
-    "alt": "12"
+    "src": "https://server.ythepaut.com/share/showcase/test/bretagne-maison-rocher.jpg",
+    "width": 6000,
+    "height": 4000,
+    "title": ""
   },
   {
-    "src": "https://cdn.pixabay.com/photo/2024/07/15/16/09/bird-8897237_960_720.jpg",
-    "width": 960,
-    "height": 640,
-    "alt": "13"
+    "src": "https://server.ythepaut.com/share/showcase/test/bretagne-bateau-brouillard.jpg",
+    "width": 6000,
+    "height": 4000,
+    "title": ""
   }
 ]

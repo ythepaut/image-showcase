@@ -1,4 +1,15 @@
 {
-    "home": {
-    }
+  "common": {
+    "close": "Close"
+  },
+  "image-details": {
+    "exif": {
+      "artist": "Artist",
+      "createDate": "Date",
+      "dimensions": "Dimensions"
+    },
+    "camera-settings": "Camera & Settings",
+    "unknown-camera": "Unknown camera",
+    "view-exif": "View full EXIF"
+  }
 }
