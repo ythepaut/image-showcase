@@ -40,7 +40,8 @@ export default function Gallery({ images }: Readonly<Props>) {
 
   return (
     <div className="flex place-content-center">
-      <div className={`gap-0 md:max-w-90vw xl:max-w-80vw ${columns === 1 ? "columns-1" : columns === 2 ? "columns-2" : "columns-3"}`}
+      <div
+        className={`gap-0 md:max-w-90vw xl:max-w-80vw ${columns === 1 ? "columns-1" : columns === 2 ? "columns-2" : "columns-3"}`}
       >
         {columnWrappers.flat().map((image: Image) => (
           <ImageTile

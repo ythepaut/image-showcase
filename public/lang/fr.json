@@ -2,11 +2,14 @@
   "common": {
     "close": "Fermer"
   },
-  "exif": {
-    "artist": "Artiste",
-    "createDate": "Date",
-    "dimensions": "Dimensions"
-  },
-  "home": {
+  "image-details": {
+    "exif": {
+      "artist": "Artiste",
+      "createDate": "Date",
+      "dimensions": "Dimensions"
+    },
+    "camera-settings": "Appareil et paramètres",
+    "unknown-camera": "Appareil inconnu",
+    "view-exif": "Afficher l'EXIF complet"
   }
 }

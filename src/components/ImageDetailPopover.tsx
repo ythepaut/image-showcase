@@ -3,8 +3,8 @@ import { useEffect, useRef, useState } from "react";
 import BiggerPicture from "bigger-picture";
 import { useTranslations } from "next-intl";
 import { getExif } from "../services/exif";
+import { ArrowTopRightOnSquareIcon, CameraIcon, XMarkIcon } from "@heroicons/react/24/outline";
 
-const MAX_ZOOM = 30;
 const DISPLAYED_EXIF_ATTRIBUTES: (keyof ImageExif)[] = ["artist", "createDate", "dimensions"];
 
 interface Props {
@@ -66,11 +66,15 @@ export default function ImageDetailPopover({ image, onClose }: Readonly<Props>) 
       noClose: true,
       inline: true,
       intro: "fadeup",
-      maxZoom: MAX_ZOOM
+      maxZoom: Math.max(1, Math.max(image.width / window.innerWidth, image.height / window.innerHeight))
     });
 
     return () => bp.close();
   }, [image]);
+
+  const cameraName = (!imageExif?.camera?.brand && !imageExif?.camera?.model)
+    ? t("image-details.unknown-camera")
+    : `${imageExif.camera?.brand} ${imageExif.camera?.model}`;
 
   return (
     <div
@@ -89,32 +93,75 @@ export default function ImageDetailPopover({ image, onClose }: Readonly<Props>) 
 
           <div className="flex items-start justify-between">
             <h2 className="text-base font-semibold leading-6 text-txt">{image.title}</h2>
-
             <button
               className="relative ml-200 rounded-md bg-white text-grey-600 hover:text-grey-800 active:text-grey-900 transition-colors"
               title={t("common.close")}
               onClick={onClose}
             >
-              <svg className="h-6 w-6" fill="none" viewBox="0 0 24 24" strokeWidth="1.5" stroke="currentColor"
-                aria-hidden="true">
-                <path strokeLinecap="round" strokeLinejoin="round" d="M6 18L18 6M6 6l12 12" />
-              </svg>
+              <XMarkIcon aria-hidden="true" className="h-6 w-6" />
             </button>
           </div>
 
           {imageExif &&
-            <dl className="mt-200 space-y-8 sm:space-y-6">
+            <dl className="mt-100 md:mt-300 space-y-100 md:space-y-200">
               {DISPLAYED_EXIF_ATTRIBUTES
                 .filter(key => imageExif[key])
+                .filter(key => typeof imageExif[key] === "string")
                 .map((key) => (
                   <div key={key}>
-                    <dt className="text-md font-medium text-txt-muted sm:w-40 sm:flex-shrink-0">{t(`exif.${key}`)}</dt>
-                    <dd className="mt-1 text-md text-txt sm:col-span-2">
-                      {typeof imageExif[key] === "string" ? imageExif[key] : imageExif[key].join("×")}
-                    </dd>
+                    <dt className="text-md font-medium text-txt-muted sm:w-40 sm:flex-shrink-0">
+                      {t(`image-details.exif.${key}`)}
+                    </dt>
+                    <dd className="mt-1 text-md text-txt sm:col-span-2">{imageExif[key]}</dd>
                   </div>
                 ))}
             </dl>
+          }
+
+          {(imageExif?.camera || imageExif?.exposure) &&
+            <div className="mt-100 md:mt-300">
+              <span className="text-md font-medium text-txt-muted sm:w-40 sm:flex-shrink-0">
+                {t("image-details.camera-settings")}
+              </span>
+              <div className="flex space-x-4 mt-50">
+                <CameraIcon className="h-10 w-10" />
+                <div className="w-1/3">
+                  <p className="text-md text-txt truncate" title={cameraName}>
+                    {cameraName}
+                  </p>
+                  <p className="text-md text-txt truncate" title={imageExif.camera?.lens}>
+                    {imageExif.camera?.lens}
+                  </p>
+                </div>
+                <div className="min-w-0 flex-1 grid grid-cols-2 md:grid-cols-1 xl:grid-cols-2">
+                  {!!imageExif.focalLength &&
+                    <p className="text-md text-txt">{imageExif.focalLength}mm</p>
+                  }
+                  {!!imageExif.exposure?.aperture &&
+                    <p className="text-md text-txt">f/{imageExif.exposure?.aperture}</p>
+                  }
+                  {!!imageExif.exposure?.shutterSpeed &&
+                    <p className="text-md text-txt">1/{imageExif.exposure?.shutterSpeed}</p>
+                  }
+                  {!!imageExif.exposure?.iso &&
+                    <p className="text-md text-txt">ISO&nbsp;{imageExif.exposure?.iso}</p>
+                  }
+                </div>
+              </div>
+            </div>
+          }
+
+          {imageExif &&
+            <div className="mt-100 md:mt-300">
+              <a
+                className="flex items-start text-md font-medium text-blue hover:text-blue-dark transition sm:w-40 sm:flex-shrink-0"
+                href={`/api/exif?url=${encodeURIComponent(image.src)}`}
+                target="_blank"
+              >
+                {t("image-details.view-exif")}&nbsp;
+                <ArrowTopRightOnSquareIcon className="h-3 w-3" />
+              </a>
+            </div>
           }
 
           {imageExif === null &&

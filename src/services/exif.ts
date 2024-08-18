@@ -20,17 +20,20 @@ export async function getExif(image: HTMLImageElement): Promise<Partial<ImageExi
 function mapRawExifToImageExif(rawExif: any): Partial<ImageExif> {
   const width = rawExif.ImageWidth ?? rawExif.ExifImageWidth;
   const height = rawExif.ImageHeight ?? rawExif.ExifImageHeight;
+  const dimensions = width && height ? `${width}×${height}` : undefined;
 
   let shutterSpeed = rawExif.ISOSpeed;
-  if (!shutterSpeed && rawExif.ShutterSpeedValue) {
-    shutterSpeed = 1 / rawExif.ShutterSpeedValue;
-  }
   if (!shutterSpeed && rawExif.ExposureTime) {
-    shutterSpeed = 1 / rawExif.ExposureTime;
+    shutterSpeed = Math.round(1 / rawExif.ExposureTime);
+  }
+  if (!shutterSpeed && rawExif.ShutterSpeedValue) {
+    shutterSpeed = Math.round(1/Math.pow(2, -rawExif.ShutterSpeedValue));
   }
 
   return {
-    dimensions: width && height ? [width, height] : undefined,
+    dimensions,
+    width,
+    height,
     createDate: rawExif.CreateDate
       ? DateTime.fromISO(rawExif.CreateDate, { zone: "utc" }).toFormat("dd/MM/yyyy HH:mm:ss")
       : undefined,
@@ -43,7 +46,7 @@ function mapRawExifToImageExif(rawExif: any): Partial<ImageExif> {
     },
     exposure: {
       shutterSpeed,
-      aperture: Math.round(rawExif.FNumber),
+      aperture: Math.round(rawExif.FNumber * 10) / 10,
       iso: rawExif.ISO,
       compensation: rawExif.ExposureCompensation
     },

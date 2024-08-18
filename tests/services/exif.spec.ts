@@ -49,7 +49,7 @@ describe("EXIF Service", () => {
       ISO: 100,
       ExposureCompensation: 0.3,
       ImageWidth: 1000,
-      ImageHeight: 1000
+      ImageHeight: 2000
     }));
 
     // When
@@ -65,11 +65,13 @@ describe("EXIF Service", () => {
         lens: "Lens model"
       },
       exposure: {
-        aperture: 3,
+        aperture: 2.8,
         compensation: 0.3,
         iso: 100,
       },
-      dimensions: [1000, 1000],
+      dimensions: "1000×2000",
+      width: 1000,
+      height: 2000,
       rawExif: {
         CreateDate: "2025-01-01T00:00:00Z",
         Artist: "Alice Durand",
@@ -80,7 +82,7 @@ describe("EXIF Service", () => {
         ISO: 100,
         ExposureCompensation: 0.3,
         ImageWidth: 1000,
-        ImageHeight: 1000
+        ImageHeight: 2000
       }
     });
   });

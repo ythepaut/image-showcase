@@ -19,7 +19,9 @@ interface Exposure {
 }
 
 export interface ImageExif {
-  dimensions: number[];
+  dimensions: string;
+  width: number;
+  height: number;
   createDate: string;
   artist: string;
 

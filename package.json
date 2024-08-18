@@ -25,6 +25,7 @@
   },
   "homepage": "https://github.com/ythepaut/image-showcase#readme",
   "dependencies": {
+    "@heroicons/react": "^2.1.5",
     "bigger-picture": "^1.1.17",
     "exifr": "^7.1.3",
     "luxon": "^3.5.0",
