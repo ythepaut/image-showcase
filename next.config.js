@@ -1,17 +1,18 @@
-module.exports = {
+const createNextIntlPlugin = require("next-intl/plugin");
+
+const withNextIntl = createNextIntlPlugin();
+
+/** @type {import("next").NextConfig} */
+const nextConfig = {
   publicRuntimeConfig: {
-    appName: process.env.APP_NAME,
-    appDescription: process.env.APP_DESCRIPTION,
-    appKeywords: process.env.APP_KEYWORDS,
+    appName: process.env.APP_NAME ?? "Image Showcase",
+    appDescription: process.env.APP_DESCRIPTION ?? "An image gallery",
+    appKeywords: process.env.APP_KEYWORDS ?? "image, gallery, showcase",
     appUrl: process.env.APP_URL,
-    timeZone: process.env.TIMEZONE
+    timeZone: process.env.TIMEZONE ?? "UTC"
   },
   reactStrictMode: true,
   swcMinify: true,
-  i18n: {
-    locales: ["fr", "en"],
-    defaultLocale: process.env.DEFAULT_LOCALE
-  },
   images: {
     remotePatterns: [
       {
@@ -23,3 +24,5 @@ module.exports = {
     ]
   }
 };
+
+module.exports = withNextIntl(nextConfig);

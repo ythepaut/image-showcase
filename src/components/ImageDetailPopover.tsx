@@ -1,3 +1,5 @@
+"use client";
+
 import { Image, ImageExif } from "../model/image";
 import { useEffect, useRef, useState } from "react";
 import BiggerPicture from "bigger-picture";
@@ -104,7 +106,7 @@ export default function ImageDetailPopover({ image, onClose }: Readonly<Props>) 
 
           <div className="overflow-y-scroll flex-1 pb-4 px-6">
             {imageExif &&
-              <dl className="md:mt-6 space-y-2 md:space-y-4">
+              <dl className="space-y-2 md:space-y-4">
                 {DISPLAYED_EXIF_ATTRIBUTES
                   .filter(key => imageExif[key])
                   .filter(key => typeof imageExif[key] === "string")

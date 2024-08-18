@@ -11,5 +11,9 @@
     "camera-settings": "Camera & Settings",
     "unknown-camera": "Unknown camera",
     "view-exif": "View full EXIF"
+  },
+  "not-found": {
+    "message": "The page you are looking for does not exist.",
+    "back-to-home": "Back to home"
   }
 }

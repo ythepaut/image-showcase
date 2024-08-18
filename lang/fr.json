@@ -11,5 +11,9 @@
     "camera-settings": "Appareil et paramètres",
     "unknown-camera": "Appareil inconnu",
     "view-exif": "Afficher l'EXIF complet"
+  },
+  "not-found": {
+    "message": "La page que vous recherchez n'existe pas.",
+    "back-to-home": "Retourner à l'accueil"
   }
 }
