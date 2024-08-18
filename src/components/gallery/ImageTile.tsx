@@ -10,7 +10,7 @@ interface Props {
 
 export default function ImageTile({ image, onClick }: Readonly<Props>) {
   return (
-    <div className="p-50">
+    <div className="p-1">
       <NextImage
         data-pswp-width={image.width}
         data-pswp-height={image.height}
