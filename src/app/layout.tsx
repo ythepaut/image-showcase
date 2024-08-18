@@ -25,7 +25,8 @@ export const metadata: Metadata = {
     url: publicRuntimeConfig.appUrl,
     title: publicRuntimeConfig.appName,
     description: publicRuntimeConfig.appDescription,
-    images: ["/assets/banner.png"]
+    images: ["/assets/banner.png"],
+    siteName: publicRuntimeConfig.appName
   },
   twitter: {
     card: "summary_large_image",
