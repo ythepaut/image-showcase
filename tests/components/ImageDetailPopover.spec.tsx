@@ -53,7 +53,7 @@ describe("ImageDetailPopover", () => {
         compensation: 2
       }
     };
-    getExif.mockResolvedValue(exif);
+    (getExif as jest.Mock).mockResolvedValue(exif);
 
     // When
     let renderResult: RenderResult;

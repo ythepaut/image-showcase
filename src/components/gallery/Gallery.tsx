@@ -1,3 +1,5 @@
+"use client";
+
 import { Image } from "../../model/image";
 import ImageTile from "./ImageTile";
 import { useEffect, useState } from "react";
