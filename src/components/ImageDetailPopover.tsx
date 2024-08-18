@@ -89,12 +89,12 @@ export default function ImageDetailPopover({ image, onClose }: Readonly<Props>) 
           />
         </div>
 
-        <div className="bg-bg-light md:w-1/3 lg:w-1/4 h-screen py-200 px-300">
+        <div className="bg-bg-light md:w-1/3 lg:w-1/4 h-full max-h-30vh md:max-h-screen md:h-screen flex flex-col">
 
-          <div className="flex items-start justify-between">
+          <div className="flex items-start justify-between py-4 px-6">
             <h2 className="text-base font-semibold leading-6 text-txt">{image.title}</h2>
             <button
-              className="relative ml-200 rounded-md bg-white text-grey-600 hover:text-grey-800 active:text-grey-900 transition-colors"
+              className="relative ml-4 rounded-md bg-white text-grey-600 hover:text-grey-800 active:text-grey-900 transition-colors"
               title={t("common.close")}
               onClick={onClose}
             >
@@ -102,85 +102,87 @@ export default function ImageDetailPopover({ image, onClose }: Readonly<Props>) 
             </button>
           </div>
 
-          {imageExif &&
-            <dl className="mt-100 md:mt-300 space-y-100 md:space-y-200">
-              {DISPLAYED_EXIF_ATTRIBUTES
-                .filter(key => imageExif[key])
-                .filter(key => typeof imageExif[key] === "string")
-                .map((key) => (
-                  <div key={key}>
-                    <dt className="text-md font-medium text-txt-muted sm:w-40 sm:flex-shrink-0">
-                      {t(`image-details.exif.${key}`)}
-                    </dt>
-                    <dd className="mt-1 text-md text-txt sm:col-span-2">{imageExif[key]}</dd>
+          <div className="overflow-y-scroll flex-1 pb-4 px-6">
+            {imageExif &&
+              <dl className="md:mt-6 space-y-2 md:space-y-4">
+                {DISPLAYED_EXIF_ATTRIBUTES
+                  .filter(key => imageExif[key])
+                  .filter(key => typeof imageExif[key] === "string")
+                  .map((key) => (
+                    <div key={key}>
+                      <dt className="text-md font-medium text-txt-muted sm:w-40 sm:flex-shrink-0">
+                        {t(`image-details.exif.${key}`)}
+                      </dt>
+                      <dd className="mt-1 text-md text-txt sm:col-span-2">{imageExif[key]}</dd>
+                    </div>
+                  ))}
+              </dl>
+            }
+
+            {(imageExif?.camera || imageExif?.exposure) &&
+              <div className="mt-4 md:mt-6">
+                <span className="text-md font-medium text-txt-muted sm:w-40 sm:flex-shrink-0">
+                  {t("image-details.camera-settings")}
+                </span>
+                <div className="flex space-x-4 mt-1">
+                  <CameraIcon className="h-10 w-10" />
+                  <div className="w-1/3">
+                    <p className="text-md text-txt truncate" title={cameraName}>
+                      {cameraName}
+                    </p>
+                    <p className="text-md text-txt truncate" title={imageExif.camera?.lens}>
+                      {imageExif.camera?.lens}
+                    </p>
                   </div>
-                ))}
-            </dl>
-          }
-
-          {(imageExif?.camera || imageExif?.exposure) &&
-            <div className="mt-100 md:mt-300">
-              <span className="text-md font-medium text-txt-muted sm:w-40 sm:flex-shrink-0">
-                {t("image-details.camera-settings")}
-              </span>
-              <div className="flex space-x-4 mt-50">
-                <CameraIcon className="h-10 w-10" />
-                <div className="w-1/3">
-                  <p className="text-md text-txt truncate" title={cameraName}>
-                    {cameraName}
-                  </p>
-                  <p className="text-md text-txt truncate" title={imageExif.camera?.lens}>
-                    {imageExif.camera?.lens}
-                  </p>
-                </div>
-                <div className="min-w-0 flex-1 grid grid-cols-2 md:grid-cols-1 xl:grid-cols-2">
-                  {!!imageExif.focalLength &&
-                    <p className="text-md text-txt">{imageExif.focalLength}mm</p>
-                  }
-                  {!!imageExif.exposure?.aperture &&
-                    <p className="text-md text-txt">f/{imageExif.exposure?.aperture}</p>
-                  }
-                  {!!imageExif.exposure?.shutterSpeed &&
-                    <p className="text-md text-txt">1/{imageExif.exposure?.shutterSpeed}</p>
-                  }
-                  {!!imageExif.exposure?.iso &&
-                    <p className="text-md text-txt">ISO&nbsp;{imageExif.exposure?.iso}</p>
-                  }
+                  <div className="min-w-0 flex-1 grid grid-cols-2 md:grid-cols-1 xl:grid-cols-2">
+                    {!!imageExif.focalLength &&
+                      <p className="text-md text-txt">{imageExif.focalLength}mm</p>
+                    }
+                    {!!imageExif.exposure?.aperture &&
+                      <p className="text-md text-txt">f/{imageExif.exposure?.aperture}</p>
+                    }
+                    {!!imageExif.exposure?.shutterSpeed &&
+                      <p className="text-md text-txt">1/{imageExif.exposure?.shutterSpeed}</p>
+                    }
+                    {!!imageExif.exposure?.iso &&
+                      <p className="text-md text-txt">ISO&nbsp;{imageExif.exposure?.iso}</p>
+                    }
+                  </div>
                 </div>
               </div>
-            </div>
-          }
+            }
 
-          {imageExif &&
-            <div className="mt-100 md:mt-300">
-              <a
-                className="flex items-start text-md font-medium text-blue hover:text-blue-dark transition sm:w-40 sm:flex-shrink-0"
-                href={`/api/exif?url=${encodeURIComponent(image.src)}`}
-                target="_blank"
-              >
-                {t("image-details.view-exif")}&nbsp;
-                <ArrowTopRightOnSquareIcon className="h-3 w-3" />
-              </a>
-            </div>
-          }
+            {imageExif &&
+              <div className="mt-4 md:mt-6">
+                <a
+                  className="flex items-start text-md font-medium text-blue hover:text-blue-dark transition sm:w-40 sm:flex-shrink-0"
+                  href={`/api/exif?url=${encodeURIComponent(image.src)}`}
+                  target="_blank"
+                >
+                  {t("image-details.view-exif")}&nbsp;
+                  <ArrowTopRightOnSquareIcon className="h-3 w-3" />
+                </a>
+              </div>
+            }
 
-          {imageExif === null &&
-            <div className="mt-200 space-y-8 sm:space-y-6 animate-pulse">
-              <div className="space-y-4 sm:space-y-2">
-                <div className="h-150 w-32 bg-grey-400 rounded-full" />
-                <div className="h-150 w-48 bg-grey-400 rounded-full" />
+            {imageExif === null &&
+              <div className="mt-4 space-y-8 sm:space-y-6 animate-pulse">
+                <div className="space-y-4 sm:space-y-2">
+                  <div className="h-3 w-32 bg-grey-400 rounded-full" />
+                  <div className="h-3 w-48 bg-grey-400 rounded-full" />
+                </div>
+                <div className="space-y-4 sm:space-y-2">
+                  <div className="h-3 w-24 bg-grey-400 rounded-full" />
+                  <div className="h-3 w-40 bg-grey-400 rounded-full" />
+                </div>
+                <div className="space-y-4 sm:space-y-2">
+                  <div className="h-3 w-28 bg-grey-400 rounded-full" />
+                  <div className="h-3 w-36 bg-grey-400 rounded-full" />
+                </div>
               </div>
-              <div className="space-y-4 sm:space-y-2">
-                <div className="h-150 w-24 bg-grey-400 rounded-full" />
-                <div className="h-150 w-40 bg-grey-400 rounded-full" />
-              </div>
-              <div className="space-y-4 sm:space-y-2">
-                <div className="h-150 w-28 bg-grey-400 rounded-full" />
-                <div className="h-150 w-36 bg-grey-400 rounded-full" />
-              </div>
-            </div>
-          }
+            }
 
+          </div>
         </div>
       </div>
     </div>
