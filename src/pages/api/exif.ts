@@ -11,8 +11,7 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
   try {
     res.status(200).json(await exifr.parse(url));
   } catch (error) {
-    console.warn(error);
+    console.warn(`Could not decode EXIF :\n${error}`);
     res.status(500).json({ error: "Failed to get image EXIF" });
   }
-
 }

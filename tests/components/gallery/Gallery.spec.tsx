@@ -3,7 +3,7 @@ import { Image } from "../../../src/model/image";
 import { expect } from "@jest/globals";
 import Gallery from "../../../src/components/gallery/Gallery";
 
-jest.mock("../../../src/components/ImageDetailPopover", () => () => (
+jest.mock("../../../src/components/details/ImageDetailPopover", () => () => (
   <div />
 ));
 

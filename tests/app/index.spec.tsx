@@ -14,7 +14,7 @@ global.fetch = jest.fn(() =>
 
 jest.mock("next/config", () => () => ({
   publicRuntimeConfig: {
-    appUrl: "http://localhost:3000",
+    imagesUrl: "http://localhost:3000/assets/test.json",
   },
 }));
 
@@ -32,6 +32,6 @@ describe("Home Page", () => {
     render(await HomePage());
 
     // Then
-    expect(global.fetch).toHaveBeenCalledWith("http://localhost:3000/assets/images.json");
+    expect(global.fetch).toHaveBeenCalledWith("http://localhost:3000/assets/test.json");
   });
 });

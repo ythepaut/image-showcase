@@ -5,7 +5,7 @@ import getConfig from "next/config";
 const { publicRuntimeConfig } = getConfig();
 
 const fetchImages = async () => {
-  const response = await fetch(`${publicRuntimeConfig.appUrl}/assets/images.json`);
+  const response = await fetch(publicRuntimeConfig.imagesUrl);
   if (!response.ok) {
     throw new Error("Failed to fetch images");
   }

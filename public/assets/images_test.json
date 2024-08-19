@@ -1,0 +1,62 @@
+[
+  {
+    "src": "https://placehold.co/800x600/png?text=1",
+    "width": 800,
+    "height": 600,
+    "title": "Image 1"
+  },
+  {
+    "src": "https://placehold.co/400x900/png?text=2",
+    "width": 400,
+    "height": 900,
+    "title": "Image 2"
+  },
+  {
+    "src": "https://placehold.co/600x600/png?text=3",
+    "width": 600,
+    "height": 600,
+    "title": "Image 3"
+  },
+  {
+    "src": "https://placehold.co/600x1200/png?text=4",
+    "width": 600,
+    "height": 1200,
+    "title": "Image 4"
+  },
+  {
+    "src": "https://placehold.co/800x600/png?text=5",
+    "width": 800,
+    "height": 600,
+    "title": "Image 5"
+  },
+  {
+    "src": "https://placehold.co/400x900/png?text=6",
+    "width": 400,
+    "height": 900,
+    "title": "Image 6"
+  },
+  {
+    "src": "https://placehold.co/600x600/png?text=7",
+    "width": 600,
+    "height": 600,
+    "title": "Image 7"
+  },
+  {
+    "src": "https://placehold.co/600x1200/png?text=8",
+    "width": 600,
+    "height": 1200,
+    "title": "Image 8"
+  },
+  {
+    "src": "https://placehold.co/800x600/png?text=9",
+    "width": 800,
+    "height": 600,
+    "title": "Image 9"
+  },
+  {
+    "src": "https://placehold.co/400x900/png?text=10",
+    "width": 400,
+    "height": 900,
+    "title": "Image 10"
+  }
+]

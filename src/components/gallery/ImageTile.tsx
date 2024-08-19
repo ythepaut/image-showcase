@@ -12,8 +12,6 @@ export default function ImageTile({ image, onClick }: Readonly<Props>) {
   return (
     <div className="p-1">
       <NextImage
-        data-pswp-width={image.width}
-        data-pswp-height={image.height}
         className="w-full rounded-50 cursor-pointer"
         onClick={onClick}
         src={image.src}
