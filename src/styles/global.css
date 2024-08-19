@@ -12,3 +12,6 @@
   }
 }
 
+.bp-wrap > div:first-child {
+  background: transparent !important;
+}

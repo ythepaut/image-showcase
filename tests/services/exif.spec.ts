@@ -1,6 +1,7 @@
 import { getExif } from "../../src/services/exif";
 import { expect } from "@jest/globals";
 import fetchMock from "jest-fetch-mock";
+import { Image } from "../../src/model/image";
 
 fetchMock.enableMocks();
 
@@ -11,8 +12,12 @@ describe("EXIF Service", () => {
 
   it("should call exif endpoint with image srcset", async () => {
     // Given
-    const image = document.createElement("img");
-    image.srcset = "http://localhost/image.png";
+    const image: Image = {
+      src: "http://localhost/image.png",
+      title: "alt",
+      width: 100,
+      height: 200
+    }
     fetchMock.mockResponseOnce(JSON.stringify({}));
 
     // When
@@ -24,8 +29,12 @@ describe("EXIF Service", () => {
 
   it("should handle server error", async () => {
     // Given
-    const image = document.createElement("img");
-    image.srcset = "http://localhost/image.png";
+    const image: Image = {
+      src: "http://localhost/image.png",
+      title: "alt",
+      width: 100,
+      height: 200
+    }
     fetchMock.mockResponseOnce(JSON.stringify({}), { status: 500 });
 
     // When
@@ -37,8 +46,12 @@ describe("EXIF Service", () => {
 
   it("should map exif", async () => {
     // Given
-    const image = document.createElement("img");
-    image.srcset = "http://localhost/image.png";
+    const image: Image = {
+      src: "http://localhost/image.png",
+      title: "alt",
+      width: 100,
+      height: 200
+    }
     fetchMock.mockResponseOnce(JSON.stringify({
       CreateDate: "2025-01-01T00:00:00Z",
       Artist: "Alice Durand",

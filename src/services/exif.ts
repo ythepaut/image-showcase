@@ -1,9 +1,9 @@
-import { ImageExif } from "../model/image";
+import { Image, ImageExif } from "../model/image";
 import { DateTime } from "luxon";
 
-export async function getExif(image: HTMLImageElement): Promise<Partial<ImageExif>> {
+export async function getExif(image: Image): Promise<Partial<ImageExif>> {
   const url = new URL("/api/exif", window.location.origin);
-  url.searchParams.append("url", image.srcset);
+  url.searchParams.append("url", image.src);
 
   const response = await fetch(url.toString());
 

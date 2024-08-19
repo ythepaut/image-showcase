@@ -5,6 +5,9 @@ export default defineConfig({
     setupNodeEvents(on, config) {
     },
     baseUrl: "http://localhost:3000",
-    supportFile: false
+    supportFile: false,
+    env: {
+      NODE_ENV: "test",
+    }
   },
 });

@@ -9,8 +9,8 @@
     "lint": "next lint",
     "cypress": "cypress open",
     "cypress:headless": "cypress run",
-    "e2e": "start-server-and-test start http://localhost:3000 cypress",
-    "e2e:headless": "start-server-and-test start http://localhost:3000 cypress:headless",
+    "e2e": "cross-env NODE_ENV=test npm run build && cross-env NODE_ENV=test start-server-and-test start http://localhost:3000 cypress",
+    "e2e:headless": "cross-env NODE_ENV=test npm run build && cross-env NODE_ENV=test start-server-and-test start http://localhost:3000 cypress:headless",
     "test": "jest --coverage",
     "prepare": "husky"
   },
@@ -48,6 +48,7 @@
     "@types/react-dom": "^18.3.0",
     "@types/testing-library__jest-dom": "^5.14.9",
     "autoprefixer": "^10.4.20",
+    "cross-env": "^7.0.3",
     "cypress": "^13.13.3",
     "eslint": "^8.57.0",
     "eslint-config-next": "14.2.5",
