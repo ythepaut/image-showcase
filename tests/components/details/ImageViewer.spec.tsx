@@ -13,6 +13,7 @@ describe("ImageViewer", () => {
   it("should render", () => {
     // Given
     const image = {
+      id: "1",
       src: "/test.png",
       title: "alt",
       width: 100,

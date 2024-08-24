@@ -18,7 +18,7 @@
 
 ## Installation
 
-[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/ythepauts-projects/clone?repository-url=https%3A%2F%2Fgithub.com%2Fythepaut%2Fshowcase&env=ENVIRONMENT,APP_NAME,APP_DESCRIPTION,APP_KEYWORDS,APP_URL,IMAGES_URL,TIMEZONE,DEFAULT_LOCALE,IMAGE_HOSTNAME_PATTERN)
+[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/ythepauts-projects/clone?repository-url=https%3A%2F%2Fgithub.com%2Fythepaut%2Fshowcase&env=ENVIRONMENT,APP_NAME,APP_DESCRIPTION,APP_KEYWORDS,APP_URL,IMAGES_URL,TIMEZONE,DEFAULT_LOCALE,IMAGE_HOSTNAME_PATTERNS)
 
 ## About
 

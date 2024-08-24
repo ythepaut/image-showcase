@@ -1,35 +1,39 @@
 "use client";
 
 import { Image, ImageExif } from "../../model/image";
-import { useEffect, useState } from "react";
-import { getExif } from "../../services/exif";
+import { ReactElement, useEffect, useState } from "react";
 import ImageViewer from "./ImageViewer";
 import ImageDescription from "./ImageDescription";
 import ImageCarousel from "./ImageCarousel";
+import useImageStore from "../../store/image.store";
 
 interface Props {
-  image: Image;
-  images: Image[];
+  imageId: string;
   onClose: () => void;
-  onSelectImage: (image: Image) => void;
+  showCarouel?: boolean;
 }
 
-export default function ImageDetailPopover({ image, images, onClose, onSelectImage }: Readonly<Props>) {
+export default function ImageDetailPopover({ imageId, onClose, showCarouel }: Readonly<Props>): ReactElement {
 
+  const imageStore = useImageStore();
+  const [image, setImage] = useState<Image | null>(null);
+  const [images, setImages] = useState<Image[] | null>(null);
   const [imageExif, setImageExif] = useState<Partial<ImageExif | null>>(null);
 
-  // FIXME: Workaround for body scroll issue
   useEffect(() => {
-    document.body.style.overflow = "hidden";
-    return () => {
-      document.body.style.overflow = "auto";
-    };
-  }, []);
+    if (images) return;
+    imageStore.getImages().then(setImages);
+  }, [images, imageStore]);
 
   useEffect(() => {
-    setImageExif(null);
-    getExif(image).then(setImageExif);
-  }, [image]);
+    if (image || !images) return;
+    setImage(images.find((image) => image.id === imageId) ?? null);
+  }, [images, image, imageId]);
+
+  useEffect(() => {
+    if (!image) return;
+    imageStore.getExif(image).then(setImageExif);
+  }, [image, imageStore]);
 
   return (
     <div
@@ -42,7 +46,7 @@ export default function ImageDetailPopover({ image, images, onClose, onSelectIma
             <ImageDescription image={image} exif={imageExif} onClose={onClose} />
           </div>
           <ImageViewer image={image} />
-          <ImageCarousel selectedImage={image} images={images} onImageSelect={onSelectImage} />
+          {showCarouel && <ImageCarousel selectedImage={image} images={images} />}
 
         </div>
 

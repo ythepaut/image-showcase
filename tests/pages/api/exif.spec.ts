@@ -47,4 +47,26 @@ describe("Exif API", () => {
     // Then
     expect(res.status).toHaveBeenCalledWith(400);
   });
+
+  it("should fail if exifr fails", async () => {
+    // Given
+    const req: NextApiRequest = {
+      query: {
+        url: "https://example.com/image.jpg"
+      }
+    } as unknown as NextApiRequest;
+
+    const res: NextApiResponse = {
+      status: jest.fn().mockReturnThis(),
+      json: jest.fn()
+    } as unknown as NextApiResponse;
+
+    jest.spyOn(require("exifr"), "parse").mockRejectedValue(new Error("Failed"));
+
+    // When
+    await getExifAPI(req, res);
+
+    // Then
+    expect(res.status).toHaveBeenCalledWith(500);
+  });
 });

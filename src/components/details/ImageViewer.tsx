@@ -1,20 +1,20 @@
 "use client";
 
 import { Image } from "../../model/image";
-import { useEffect, useRef } from "react";
+import { ReactElement, useEffect, useRef } from "react";
 import BiggerPicture from "bigger-picture";
 
 interface Props {
-  image: Image;
+  image: Image | null;
 }
 
-export default function ImageViewer({ image }: Readonly<Props>) {
+export default function ImageViewer({ image }: Readonly<Props>): ReactElement {
 
   const imageWrapperRef = useRef<HTMLDivElement | null>(null);
 
   // bp initialisation
   useEffect(() => {
-    if (!imageWrapperRef.current) return;
+    if (!image || !imageWrapperRef.current) return;
 
     const bp = BiggerPicture({
       target: imageWrapperRef.current

@@ -1,4 +1,4 @@
-import HomePage from "../../src/app/[locale]/page";
+import HomePage from "../../src/app/page";
 import { expect } from "@jest/globals";
 import { render, screen } from "@testing-library/react";
 
@@ -12,11 +12,7 @@ global.fetch = jest.fn(() =>
   } as Response)
 );
 
-jest.mock("next/config", () => () => ({
-  publicRuntimeConfig: {
-    imagesUrl: "http://localhost:3000/assets/test.json",
-  },
-}));
+process.env.imagesUrl = "http://localhost:3000/assets/test.json";
 
 describe("Home Page", () => {
   it("should render", async () => {
@@ -32,6 +28,6 @@ describe("Home Page", () => {
     render(await HomePage());
 
     // Then
-    expect(global.fetch).toHaveBeenCalledWith("http://localhost:3000/assets/test.json");
+    expect(global.fetch).toHaveBeenCalledWith("http://localhost:3000/assets/test.json", { cache: "force-cache" });
   });
 });

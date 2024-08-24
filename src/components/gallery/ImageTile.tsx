@@ -2,18 +2,17 @@ import { Image } from "../../model/image";
 import { default as NextImage } from "next/image";
 import ReactDOMServer from "react-dom/server";
 import Shimmer from "../Shimmer";
+import { ReactElement } from "react";
 
 interface Props {
   image: Image;
-  onClick: () => void;
 }
 
-export default function ImageTile({ image, onClick }: Readonly<Props>) {
+export default function ImageTile({ image }: Readonly<Props>): ReactElement {
   return (
     <div className="p-1">
       <NextImage
         className="w-full rounded-50 cursor-pointer"
-        onClick={onClick}
         src={image.src}
         alt={image.title}
         width={image.width}

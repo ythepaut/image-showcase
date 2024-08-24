@@ -2,55 +2,62 @@ import "../styles/global.css";
 import "../styles/variables.css";
 import "bigger-picture/css";
 import { NextIntlClientProvider } from "next-intl";
-import { ReactNode } from "react";
-import getConfig from "next/config";
+import { ReactElement, ReactNode } from "react";
 import type { Metadata } from "next";
-import { getMessages } from "next-intl/server";
-import Head from "next/head";
+import { getLocale, getMessages } from "next-intl/server";
 
-const { publicRuntimeConfig } = getConfig();
 
 export const metadata: Metadata = {
-  metadataBase: new URL(publicRuntimeConfig.appUrl),
-  title: publicRuntimeConfig.appName,
-  applicationName: publicRuntimeConfig.appName,
-  description: publicRuntimeConfig.appDescription,
+  metadataBase: new URL(process.env.appUrl ?? ""),
+  title: process.env.appName,
+  applicationName: process.env.appName,
+  description: process.env.appDescription,
   authors: [
     { name: "Yohann THEPAUT (ythepaut)", url: "https://www.ythepaut.com" }
   ],
   creator: "Yohann THEPAUT (ythepaut)",
-  keywords: publicRuntimeConfig.appKeywords,
+  keywords: process.env.appKeywords,
   openGraph: {
     type: "website",
-    url: publicRuntimeConfig.appUrl,
-    title: publicRuntimeConfig.appName,
-    description: publicRuntimeConfig.appDescription,
+    url: process.env.appUrl,
+    title: process.env.appName,
+    description: process.env.appDescription,
     images: ["/assets/banner.png"],
-    siteName: publicRuntimeConfig.appName
+    siteName: process.env.appName
   },
   twitter: {
     card: "summary_large_image",
-    site: publicRuntimeConfig.appUrl,
-    title: publicRuntimeConfig.appName,
-    description: publicRuntimeConfig.appDescription,
+    site: process.env.appUrl,
+    title: process.env.appName,
+    description: process.env.appDescription,
     images: ["/assets/banner.png"]
   }
 };
 
-export default async function Layout({ children, params: { locale } }: { children: ReactNode, params: { locale: string } }) {
-  const messages = await getMessages();
+interface Props {
+  children: ReactNode,
+  modal: ReactNode
+}
+
+export default async function Layout({ children, modal }: Readonly<Props>): Promise<ReactElement> {
+  const locale = await getLocale();
+  const messages = await getMessages({ locale });
+
   return (
     <html lang={locale}>
-      <Head>
+      <head>
         <link rel="icon" href="/assets/favicon.svg" />
-      </Head>
+        <title>{(metadata.title ?? "") as ReactNode}</title>
+      </head>
       <body>
         <NextIntlClientProvider
-          locale={publicRuntimeConfig.locale}
+          locale={locale}
           messages={messages}
-          timeZone={publicRuntimeConfig.timeZone}
+          timeZone={process.env.timeZone}
         >
           {children}
+          {modal}
+          <div id="modal-root" />
         </NextIntlClientProvider>
       </body>
     </html>

@@ -2,8 +2,8 @@
 
 import { Image } from "../../model/image";
 import ImageTile from "./ImageTile";
-import { useEffect, useState } from "react";
-import ImageDetailPopover from "../details/ImageDetailPopover";
+import { ReactElement, useEffect, useState } from "react";
+import Link from "next/link";
 
 
 const SCREEN_WIDTH_XL = 1280;
@@ -13,9 +13,8 @@ interface Props {
   images: Image[];
 }
 
-export default function Gallery({ images }: Readonly<Props>) {
+export default function Gallery({ images }: Readonly<Props>): ReactElement {
   const [columns, setColumns] = useState<number>(1);
-  const [selectedImage, setSelectedImage] = useState<Image | null>(null);
 
   // Window width handling for column count
   useEffect(() => {
@@ -46,22 +45,11 @@ export default function Gallery({ images }: Readonly<Props>) {
         className={`gap-0 md:max-w-90vw xl:max-w-80vw ${columns === 1 ? "columns-1" : columns === 2 ? "columns-2" : "columns-3"}`}
       >
         {columnWrappers.flat().map((image: Image) => (
-          <ImageTile
-            image={image}
-            key={image.src}
-            onClick={() => setSelectedImage(image)}
-          />
+          <Link key={image.id} href={`/photo/${image.id}`} passHref>
+            <ImageTile image={image} />
+          </Link>
         ))}
       </div>
-
-      {selectedImage && (
-        <ImageDetailPopover
-          image={selectedImage}
-          images={images}
-          onClose={() => setSelectedImage(null)}
-          onSelectImage={(img) => setSelectedImage(img)}
-        />
-      )}
     </div>
   );
 }

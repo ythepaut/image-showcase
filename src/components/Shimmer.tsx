@@ -1,9 +1,11 @@
+import { ReactElement } from "react";
+
 interface Props {
   width: number;
   height: number;
 }
 
-export default function Shimmer({ width, height }: Readonly<Props>) {
+export default function Shimmer({ width, height }: Readonly<Props>): ReactElement {
   const bgColour = "#EBF2FA";
   const waveColour = "#E4ECF7";
 
