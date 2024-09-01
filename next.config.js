@@ -1,10 +1,8 @@
-const createNextIntlPlugin = require("next-intl/plugin");
-
-const withNextIntl = createNextIntlPlugin();
+const withNextIntl = require("next-intl/plugin")();
 
 /** @type {import("next").NextConfig} */
 const nextConfig = {
-  publicRuntimeConfig: {
+  env: {
     appName: process.env.APP_NAME ?? "Image Showcase",
     appDescription: process.env.APP_DESCRIPTION ?? "An image gallery",
     appKeywords: process.env.APP_KEYWORDS ?? "image, gallery, showcase",
@@ -15,14 +13,11 @@ const nextConfig = {
   reactStrictMode: true,
   swcMinify: true,
   images: {
-    remotePatterns: [
-      {
-        protocol: "https",
-        hostname: process.env.IMAGE_HOSTNAME_PATTERN,
-        port: "",
-        pathname: "/**"
-      }
-    ]
+    remotePatterns: process.env.IMAGE_HOSTNAME_PATTERNS.split(/\s*,\s*/).map(pattern => ({
+      protocol: "https",
+      hostname: pattern,
+      pathname: "/**"
+    }))
   }
 };
 

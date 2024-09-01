@@ -1,4 +1,4 @@
-import { getExif } from "../../src/services/exif";
+import { getExif } from "../../src/services/exif.service";
 import { expect } from "@jest/globals";
 import fetchMock from "jest-fetch-mock";
 import { Image } from "../../src/model/image";
@@ -13,6 +13,7 @@ describe("EXIF Service", () => {
   it("should call exif endpoint with image srcset", async () => {
     // Given
     const image: Image = {
+      id: "1",
       src: "http://localhost/image.png",
       title: "alt",
       width: 100,
@@ -24,12 +25,13 @@ describe("EXIF Service", () => {
     await getExif(image);
 
     // Then
-    expect(fetchMock).toHaveBeenCalledWith("http://localhost/api/exif?url=http%3A%2F%2Flocalhost%2Fimage.png");
+    expect(fetchMock).toHaveBeenCalledWith("http://localhost/api/exif?url=http%3A%2F%2Flocalhost%2Fimage.png", { cache: "force-cache" });
   });
 
   it("should handle server error", async () => {
     // Given
     const image: Image = {
+      id: "1",
       src: "http://localhost/image.png",
       title: "alt",
       width: 100,
@@ -47,6 +49,7 @@ describe("EXIF Service", () => {
   it("should map exif", async () => {
     // Given
     const image: Image = {
+      id: "1",
       src: "http://localhost/image.png",
       title: "alt",
       width: 100,

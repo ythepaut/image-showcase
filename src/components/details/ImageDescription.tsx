@@ -1,18 +1,17 @@
-"use client";
-
 import { Image, ImageExif } from "../../model/image";
 import { ArrowTopRightOnSquareIcon, CameraIcon, XMarkIcon } from "@heroicons/react/24/outline";
 import { useTranslations } from "next-intl";
+import { ReactElement } from "react";
 
 const DISPLAYED_EXIF_ATTRIBUTES: (keyof ImageExif)[] = ["artist", "createDate", "dimensions"];
 
 interface Props {
-  image: Image;
+  image: Image | null;
   exif: Partial<ImageExif> | null;
   onClose: () => void;
 }
 
-export default function ImageDescription({ image, exif, onClose }: Readonly<Props>) {
+export default function ImageDescription({ image, exif, onClose }: Readonly<Props>): ReactElement {
 
   const t = useTranslations();
 
@@ -23,7 +22,10 @@ export default function ImageDescription({ image, exif, onClose }: Readonly<Prop
   return (
     <div className="bg-bg-light flex flex-col h-full">
       <div className="flex items-start justify-between py-4 px-6">
-        <h2 className="text-base font-semibold leading-6 text-txt">{image.title}</h2>
+        {image
+          ? <h2 className="text-base font-semibold leading-6 text-txt">{image.title}</h2>
+          : <div className="h-6 w-32 bg-grey-400 rounded-full animate-pulse" />
+        }
         <button
           className="relative ml-4 rounded-md bg-white text-grey-600 hover:text-grey-800 active:text-grey-900 transition-colors"
           title={t("common.close")}
@@ -33,7 +35,7 @@ export default function ImageDescription({ image, exif, onClose }: Readonly<Prop
         </button>
       </div>
 
-      <div className="overflow-y-scroll flex-1 pb-4 px-6">
+      <div className="overflow-y-auto flex-1 pb-4 px-6">
         {exif &&
           <dl className="space-y-2 md:space-y-4">
 
@@ -84,7 +86,7 @@ export default function ImageDescription({ image, exif, onClose }: Readonly<Prop
           </div>
         }
 
-        {exif &&
+        {image && exif &&
           <div className="mt-4 md:mt-6">
             <a
               className="flex items-start text-md font-medium text-blue hover:text-blue-dark transition sm:w-40 sm:flex-shrink-0"

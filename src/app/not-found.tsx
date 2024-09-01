@@ -1,10 +1,11 @@
 import { ExclamationCircleIcon } from "@heroicons/react/24/outline";
 import { getTranslations } from "next-intl/server";
 import Link from "next/link";
+import { ReactElement } from "react";
 
 export const dynamic = "force-dynamic";
 
-export default async function NotFoundPage() {
+export default async function NotFoundPage(): Promise<ReactElement> {
   const t = await getTranslations("not-found");
   return (
     <div className="h-screen flex flex-col items-center justify-center place-content-center text-center">
