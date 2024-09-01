@@ -5,11 +5,11 @@ export async function getAllImages(url: string): Promise<Image[]> {
     fetch(url, {cache: "force-cache"})
       .then((response) => {
         if (!response.ok) {
-          reject("Failed to fetch images");
+          reject(new Error("Failed to fetch images"));
         } else {
           resolve(response.json());
         }
       })
-      .catch((error) => reject(error));
+      .catch((error) => reject(new Error(error)));
   });
 }

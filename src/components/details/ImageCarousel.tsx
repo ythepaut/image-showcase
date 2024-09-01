@@ -40,7 +40,7 @@ export default function ImageCarousel({ selectedImageId, images }: Readonly<Prop
       className="flex px-1 pb-6 md:pb-1 pt-1 md:pt-4 space-x-1 md:place-items-end overflow-x-auto overflow-y-clip scroll-smooth"
       ref={carouselRef}
     >
-      {images && images.map(image => (
+      {images?.map(image => (
         <Link
           className={selectedImageId === image.id ? "flex-none w-[48px] h-[48px] md:w-[64px] md:h-[64px] cursor-default" : "flex-none w-[40px] h-[40px] md:w-[56px] md:h-[56px]"}
           key={image.id}

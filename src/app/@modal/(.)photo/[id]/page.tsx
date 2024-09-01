@@ -33,7 +33,7 @@ export default function PictureDetailsPage(): ReactPortal {
   }, []);
 
   return createPortal(
-    <dialog ref={dialogRef} className="relative">
+    <dialog ref={dialogRef} className="relative" role="dialog">
       <ImageDetailPopover imageId={id} onClose={close} showCarouel={true} />
     </dialog>,
     document.getElementById("modal-root")!
