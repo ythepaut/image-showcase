@@ -3,6 +3,12 @@ import { expect } from "@jest/globals";
 import ImageCarousel from "../../../src/components/details/ImageCarousel";
 import { Image } from "../../../src/model/image";
 
+jest.mock("next/navigation", () => ({
+  useRouter: () => ({
+    prefetch: jest.fn()
+  })
+}));
+
 describe("ImageCarousel", () => {
   it("should render", () => {
     // Given
@@ -22,7 +28,7 @@ describe("ImageCarousel", () => {
     };
 
     // When
-    render(<ImageCarousel selectedImage={image1} images={[image1, image2]} />);
+    render(<ImageCarousel selectedImageId={image1.id} images={[image1, image2]} />);
 
     // Then
     expect(screen.getAllByRole("img")).toHaveLength(2);

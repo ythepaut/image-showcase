@@ -12,12 +12,14 @@ describe("Gallery", () => {
     // Given
     const images: Image[] = [
       {
+        id: "1",
         src: "/test.png",
         title: "image1",
         width: 100,
         height: 100
       },
       {
+        id: "2",
         src: "/test2.png",
         title: "image2",
         width: 100,

@@ -27,12 +27,19 @@ jobs:
         run: cp .env.test .env
       - name: Install dependencies
         run: npm ci
+      - name: Get current commit hash
+        id: vars
+        run: echo "COMMIT_HASH=$(git rev-parse HEAD)" >> $GITHUB_ENV
       - name: Build
         run: npm run build
+        env:
+          IMAGES_URL: https://raw.githubusercontent.com/ythepaut/image-showcase/${{ env.COMMIT_HASH }}/public/assets/images_test.json
       - name: Run tests
         run: npm test
       - name: Run cypress tests
         run: npm run e2e:headless
+        env:
+          IMAGES_URL: https://raw.githubusercontent.com/ythepaut/image-showcase/${{ env.COMMIT_HASH }}/public/assets/images_test.json
       - name: Run lint
         run: npm run lint
       - name: SonarCloud Scan

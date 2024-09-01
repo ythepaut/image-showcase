@@ -1,5 +1,3 @@
-"use client";
-
 import { Image, ImageExif } from "../../model/image";
 import { ArrowTopRightOnSquareIcon, CameraIcon, XMarkIcon } from "@heroicons/react/24/outline";
 import { useTranslations } from "next-intl";
