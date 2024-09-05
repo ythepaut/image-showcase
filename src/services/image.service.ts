@@ -1,15 +1,9 @@
 import { Image } from "../model/image";
 
-export async function getAllImages(url: string): Promise<Image[]> {
-  return new Promise<Image[]>((resolve, reject) => {
-    fetch(url, {cache: "force-cache"})
-      .then((response) => {
-        if (!response.ok) {
-          reject(new Error("Failed to fetch images"));
-        } else {
-          resolve(response.json());
-        }
-      })
-      .catch((error) => reject(new Error(error)));
-  });
+export async function getAllImages(): Promise<Image[]> {
+  const url = new URL("/api/images", window.location.origin);
+
+  const response = await fetch(url.toString(), {cache: "force-cache"});
+  if (!response.ok) return [];
+  return await response.json();
 }

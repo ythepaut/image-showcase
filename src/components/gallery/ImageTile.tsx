@@ -10,7 +10,7 @@ interface Props {
 
 export default function ImageTile({ image }: Readonly<Props>): ReactElement {
   return (
-    <div className="p-1">
+    <div className="relative group">
       <NextImage
         className="w-full rounded-50 cursor-pointer"
         src={image.src}
@@ -25,6 +25,12 @@ export default function ImageTile({ image }: Readonly<Props>): ReactElement {
           )
         )}`}
       />
+      <div className="hidden md:block absolute bottom-0 left-0 w-full h-20 rounded-50 bg-gradient-to-t from-black to-transparant opacity-0 group-hover:opacity-40 transition-opacity" />
+      <div className="hidden md:block px-6 py-4 absolute bottom-0 left-0 w-full opacity-0 group-hover:opacity-100 transition-opacity">
+        <span className="text-xl text-txt-white font-medium">
+          {image.title}
+        </span>
+      </div>
     </div>
   );
 }
