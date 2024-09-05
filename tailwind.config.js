@@ -52,6 +52,7 @@ module.exports = {
         "800": "var(--colour-grey-800)",
         "900": "var(--colour-grey-900)"
       },
+      black: "#000000",
       txt: {
         DEFAULT: "var(--colour-text)",
         muted: "var(--colour-text-muted)",

@@ -1,12 +1,23 @@
-import Gallery from "../components/gallery/Gallery";
-import { Image } from "../model/image";
-import { getAllImages } from "../services/image.service";
+"use client";
 
-export default async function HomePage() {
-  const images: Image[] = await getAllImages(process.env.imagesUrl ?? "");
+import Gallery from "../components/gallery/Gallery";
+import useImageStore from "../store/image.store";
+import { Image } from "../model/image";
+import { useEffect, useState } from "react";
+
+export default function HomePage() {
+
+  const imageStore = useImageStore();
+  const [images, setImages] = useState<Image[] | null>(null);
+
+  useEffect(() => {
+    if (images) return;
+    imageStore.getImages().then(setImages);
+  }, [images, imageStore]);
+
   return (
     <section className="p-2 bg-bg-light" aria-label="Gallery Section">
-      <Gallery images={images} />
+      <Gallery images={images ?? []} />
     </section>
   );
 }

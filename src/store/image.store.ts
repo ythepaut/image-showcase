@@ -26,7 +26,7 @@ const useImageStore = create<ImageStore>((set, get) => ({
     const { images } = get().state;
     if (images) return images;
 
-    const fetchedImages = await getAllImages(process.env.imagesUrl ?? "");
+    const fetchedImages = await getAllImages();
     set(state => ({ state: { ...state.state, images: fetchedImages } }));
     return fetchedImages;
   },

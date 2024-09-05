@@ -57,7 +57,7 @@ Choose one of the following methods:
     APP_URL=
     
     # URL to the image list (c.f. 2.)
-    IMAGES_URL=http://showcase.ythepaut.com/assets/images.json
+    IMAGES_URL=
     
     # Your timezone and default locale (only fr and en are supported)
     TIMEZONE=Europe/Paris

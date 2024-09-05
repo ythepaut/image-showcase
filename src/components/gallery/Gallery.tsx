@@ -45,9 +45,11 @@ export default function Gallery({ images }: Readonly<Props>): ReactElement {
         className={`gap-0 md:max-w-90vw xl:max-w-80vw ${columns === 1 ? "columns-1" : columns === 2 ? "columns-2" : "columns-3"}`}
       >
         {columnWrappers.flat().map((image: Image) => (
-          <Link key={image.id} href={`/photo/${image.id}`} passHref>
-            <ImageTile image={image} />
-          </Link>
+          <div key={image.id} className="p-0.5">
+            <Link href={`/photo/${image.id}`} passHref>
+              <ImageTile image={image} />
+            </Link>
+          </div>
         ))}
       </div>
     </div>
