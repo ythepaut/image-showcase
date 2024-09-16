@@ -11,7 +11,14 @@ const nextConfig = {
     timeZone: process.env.TIMEZONE ?? "UTC"
   },
   reactStrictMode: true,
-  swcMinify: true
+  swcMinify: true,
+  images: {
+    remotePatterns: process.env.IMAGE_HOSTNAME_PATTERNS.split(/\s*,\s*/).map(pattern => ({
+      protocol: "https",
+      hostname: pattern,
+      pathname: "/**"
+    }))
+  }
 };
 
 module.exports = withNextIntl(nextConfig);
