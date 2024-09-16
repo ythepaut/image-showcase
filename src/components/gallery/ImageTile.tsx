@@ -13,7 +13,7 @@ export default function ImageTile({ image }: Readonly<Props>): ReactElement {
     <div className="relative group">
       <NextImage
         className="w-full rounded-50 cursor-pointer"
-        src={image.src}
+        src={`/api/image?url=${encodeURIComponent(image.src)}`}
         alt={image.title}
         width={image.width}
         height={image.height}
