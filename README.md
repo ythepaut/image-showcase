@@ -62,7 +62,7 @@ Choose one of the following methods:
     # Your timezone and default locale (only fr and en are supported)
     TIMEZONE=Europe/Paris
     DEFAULT_LOCALE=fr
-
+    
     # Comma separated patterns to the image hosts (e.g. cdn.mydomain.com, placehold.co, *.pixabay.com)
     IMAGE_HOSTNAME_PATTERNS=
     ```

@@ -48,7 +48,7 @@ export default function ImageCarousel({ selectedImageId, images }: Readonly<Prop
           passHref>
           <NextImage
             className="object-cover w-full h-full rounded-50"
-            src={`/api/image?url=${encodeURIComponent(image.src)}`}
+            src={image.src}
             alt={image.title}
             width={image.width}
             height={image.height}
