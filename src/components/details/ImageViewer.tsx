@@ -21,8 +21,8 @@ export default function ImageViewer({ image }: Readonly<Props>): ReactElement {
     });
     bp.open({
       items: [{
-        img: image.src,
-        thumb: image.src,
+        img: `/api/image?url=${encodeURIComponent(image.src)}`,
+        thumb: `/api/image?url=${encodeURIComponent(image.src)}`,
         width: image.width,
         height: image.height,
         alt: image.title
